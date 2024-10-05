@@ -81,15 +81,7 @@ void aimassist::run() {
 				if (abs(wrap_180(-(my_yaw - angles.first))) <= fov)
 				{
 
-					// ANTICHEAT BYPASS METHOD 1 A BIT WEIRD MOUSE WIGGLING BUT WORKS
 
-					/*auto device = std::random_device();
-					auto engine = std::mt19937(device());
-					auto gen = std::uniform_real_distribution<float>(fovyaw - random_amount, fovpitch + random_amount);
-
-					float yaw = gen(engine);
-
-					my_yaw += (yaw / (100 / speed)) * 0.25;*/
 
 
 					auto device = std::random_device();
@@ -97,13 +89,11 @@ void aimassist::run() {
 					auto gen = std::uniform_real_distribution<float>(speed - random_amount, speed + random_amount);
 					float speed = gen(engine);
 
-					//my_yaw += ((speed - 1) * 0.25);
+	
 
 					my_yaw += (fovyaw / (100 / speed)) * 0.25; //aclicker::_rand_val(0.5,1.2);
 
-					//my_yaw = yaw;
 
-					//std::cout << my_yaw << std::endl;
 
 					localPlayer->setRotationYaw(my_yaw);
 					Sleep(1);
